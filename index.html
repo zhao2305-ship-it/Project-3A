@@ -5,46 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Project 3A – Results</title>
   <style>
-    body {
-      margin: 40px auto;
-      max-width: 1200px;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: #111;
-      background: #fff;
-      line-height: 1.6;
-    }
-    h1 { font-size: 2em; margin-bottom: 0.5em; }
-    h2 { font-size: 1.5em; margin-top: 1.5em; margin-bottom: 0.5em; }
-    p { margin-top: 0.3em; margin-bottom: 0.3em; }
-    a { color: #0645ad; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      background: #fafafa;
-      overflow: hidden;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-      transition: all 0.2s ease;
-    }
-    .card:hover { box-shadow: 0 2px 6px rgba(0,0,0,0.1); transform: translateY(-2px); }
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-      border-bottom: 1px solid #ddd;
-    }
-    .caption {
-      padding: 10px 14px;
-      font-size: 0.9em;
-      color: #333;
-    }
+    body{margin:40px auto;max-width:1200px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#111;background:#fff;line-height:1.6}
+    h1{font-size:2em;margin-bottom:.5em}
+    h2{font-size:1.5em;margin:1.5em 0 .5em}
+    a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:20px}
+    .card{border:1px solid #ddd;border-radius:10px;background:#fafafa;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.05);transition:all .2s ease}
+    .card:hover{box-shadow:0 2px 6px rgba(0,0,0,.1);transform:translateY(-2px)}
+    .card img{width:100%;height:180px;object-fit:cover;display:block;border-bottom:1px solid #ddd}
+    .caption{padding:10px 14px;font-size:.9em;color:#333}
   </style>
 </head>
 <body>
@@ -53,36 +22,28 @@
 
   <h2>Download</h2>
   <p>
-    <a href="https://drive.google.com/file/d/15hvWm-qpiBuH3Oc0bLCLwaPPZKVGvhT2/view?usp=sharing" target="_blank">Download from Google Drive</a><br>
-    <a href="https://drive.google.com/file/d/15hvWm-qpiBuH3Oc0bLCLwaPPZKVGvhT2/view?usp=sharing" target="_blank">Direct download (Drive)</a>
+    <a href="https://drive.google.com/file/d/15hvWm-qpiBuH3Oc0bLCLwaPPZKVGvhT2/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download from Google Drive</a><br>
+    <a href="https://drive.google.com/file/d/15hvWm-qpiBuH3Oc0bLCLwaPPZKVGvhT2/view?usp=sharing" target="_blank" rel="noopener noreferrer">Direct download (Drive)</a>
   </p>
 
   <h2>Challenge</h2>
   <p>
-    The main challenges of this project centered around environment setup and implementation details. ASan linking failed under MSYS2, VS Code could not locate the compiler, and paths containing Chinese characters and OneDrive were not localized, causing image reading errors. Random jitter easily introduced brightness shifts, Floyd–Steinberg error diffusion could exceed bounds, and initial contrast adjustments produced no visible difference. These issues were resolved by switching to Ubuntu, pointing to the correct <code>g++</code>, completing headers and clamping, and using zero-mean jitter, center-aligned sampling, and mean-centered brightness scaling.
+    The main challenges of this project centered around environment setup and implementation details. ASan linking failed under MSYS2, VS Code could not locate the compiler, and paths containing Chinese characters and OneDrive caused image IO issues. Random jitter introduced brightness shifts, error diffusion could exceed bounds, and early contrast adjustments produced no visible difference. These were resolved by switching to Ubuntu, pointing to the correct g++, completing headers and clamping, and using zero-mean jitter, center-aligned sampling, and mean-centered brightness scaling.
   </p>
 
   <h2>Gallery</h2>
   <div class="gallery">
     <div class="card">
-      <img src="basic_plus.png" alt="basic_plus">
-      <div class="caption">basic_plus</div>
+      <img src="output.png" alt="output">
+      <div class="caption">Final Output</div>
     </div>
     <div class="card">
-      <img src="basic_minus.png" alt="basic_minus">
-      <div class="caption">basic_minus</div>
-    </div>
-    <div class="card">
-      <img src="phong_minusz.png" alt="phong_minusz">
-      <div class="caption">phong_minusz</div>
+      <img src="output_red.png" alt="output_red">
+      <div class="caption">Red Tint Variant</div>
     </div>
     <div class="card">
       <img src="phong_shadow_plusz.png" alt="phong_shadow_plusz">
-      <div class="caption">phong_shadow_plusz</div>
-    </div>
-    <div class="card">
-      <img src="output.png" alt="final output">
-      <div class="caption">Final output</div>
+      <div class="caption">Phong + Shadow (+z)</div>
     </div>
   </div>
 
